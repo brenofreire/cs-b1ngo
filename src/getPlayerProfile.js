@@ -2,7 +2,7 @@ const got = require("got");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const _ = require("lodash");
-const { players, teams } = require("./lists");
+const { players, teams, coaches } = require("./lists");
 const { delayedLoop } = require("./delayed-loop");
 const { modifyJsonFile } = require("./modify-json-file");
 const { jsonToFile } = require("./json-to-file");
@@ -32,7 +32,12 @@ const getPlayerProfile = async (player) => {
       teams.map((teamX) => teamX.name)
     );
 
-    jsonToFile(player, validTeams, countryName);
+    jsonToFile(
+      player,
+      validTeams,
+      countryName,
+      `players/${player.nickname}.json`
+    );
   } catch (error) {
     console.log({ error });
   }

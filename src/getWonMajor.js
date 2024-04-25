@@ -2,13 +2,13 @@ const got = require("got");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const _ = require("lodash");
-const { players } = require("./lists");
+const { players, coaches } = require("./lists");
 const { delayedLoop } = require("./delayed-loop");
 const { modifyJsonFile } = require("./modify-json-file");
 
 const getWonMajor = async (player) => {
   console.log("Buscando dados de ", player);
-  const crawUrl = `https://liquipedia.net/counterstrike/${player.liquipediaId}/Results`;
+  const crawUrl = `https://liquipedia.net/counterstrike/${player.liquipediaId}/Coaching`;
   let wonMajor = false;
 
   // Webscrapping
@@ -30,7 +30,7 @@ const getWonMajor = async (player) => {
       const hasWon = link.getElementsByClassName("placement-1")[0];
 
       if (hasWon) {
-        modifyJsonFile(`players/${player.nickname}.json`, {
+        modifyJsonFile(`players/coach-${player.nickname}.json`, {
           wonMajor: true,
         });
 
@@ -46,4 +46,4 @@ const getWonMajor = async (player) => {
   );
 };
 
-delayedLoop(getWonMajor, players);
+delayedLoop(getWonMajor, coaches);

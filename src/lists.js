@@ -182,19 +182,43 @@ const players = [
 ];
 
 const coaches = [
-  // "Apoka",
-  "adr",
-  "BIT",
-  "Guerri",
-  "Zakk",
-  "Peacemaker",
-  "Zews",
-  "Xamp",
+  {
+    nickname: "Apoka",
+    liquipediaId: "Apoka",
+  },
+  {
+    nickname: "Adr",
+    liquipediaId: "Adr",
+  },
+  {
+    nickname: "BIT",
+    liquipediaId: "BIT",
+  },
+  {
+    nickname: "Guerri",
+    liquipediaId: "Guerri",
+  },
+  {
+    nickname: "Zakk",
+    liquipediaId: "Zakk",
+  },
+  {
+    nickname: "Peacemaker",
+    liquipediaId: "Peacemaker",
+  },
+  {
+    nickname: "Zews",
+    liquipediaId: "Zews",
+  },
+  {
+    nickname: "Xamp",
+    liquipediaId: "Xamp",
+  },
 ];
 
 const teams = [
   {
-    name: "Luminosity Gaming",
+    name: "Luminosity",
     liquipediaId: "Luminosity_Gaming",
   },
   {
