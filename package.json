@@ -1,11 +1,15 @@
 {
   "scripts": {
-    "start": " node --env-file .env src/db/connect.js"
+    "start": " node --env-file .env src/db/connect.js",
+    "get-game": " node --env-file .env src/api/getGame.js"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "got": "^11.0.2",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.21",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3"
   }
 }
